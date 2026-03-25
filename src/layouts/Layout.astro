@@ -1,19 +1,55 @@
+---
+const { title } = Astro.props;
+import '../styles/global.css';
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{title}</title>
+		<script src="https://kit.fontawesome.com/66a50df515.js" crossorigin="anonymous"></script>
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
 	</head>
 	<body>
-		<slot />
+		<header>
+
+			<input type="checkbox" id="check">
+			<label for="check" class="icons">
+				<i class="fa-solid fa-bars" id="menu-icon"></i>
+				<i class="fa-solid fa-x" id="close-icon"></i>
+			</label>
+	
+			<nav id="nav">
+				<ul id="navList">
+					<li class="navItem"><a href="#home" class="navLink">Home</a></li>
+					<li class="navItem"><a href="#skills" class="navLink">Skills</a></li>
+					<li class="navItem"><a href="#history" class="navLink">History</a></li>
+					<li class="navItem"><a href="#projects" class="navLink">Projects</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<slot />
+		</main>
+		<footer id="footerSection">
+			<div class="spacer">
+				<div class="footSpace">
+					<p id="footDate">&#169; 2024</p>
+					<a href="#" id="footerLink">zachh.dev</a>
+				</div>
+				<ul class="socialList">
+					<li class="socialListItem"><a class="socialListLink" href="https://github.com/zah8756"><i class="fa-brands fa-github"></i></a></li>
+					<li class="socialListItem"><a class="socialListLink" href="mailto:320zach@gmail.com"><i class="fa-solid fa-envelope"></i></a></li>
+					<li class="socialListItem"><a class="socialListLink" href="https://www.linkedin.com/in/zachary-harwood-4a5586299/"><i class="fa-brands fa-linkedin"></i></a></li>
+				</ul>
+			</div>
+		</footer>
 	</body>
 </html>
 
-<style>
+<style is:global>
 	html,
 	body {
 		margin: 0;
