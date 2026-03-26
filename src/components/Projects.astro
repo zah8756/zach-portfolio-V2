@@ -1,0 +1,112 @@
+---
+import Project from "./Sub-Components/project.astro";
+import mysiteFix from "../assets/mysiteFix.png";
+import chatboard from "../assets/Chatboard.png";
+import php from "../assets/PHP.png";
+import recipes from "../assets/recipes.png";
+import rps from "../assets/RPS.png";
+import blackjack from "../assets/BlackJackSquare.png";
+
+const projects = [
+  {
+    href: "#",
+    imgSrc: mysiteFix,
+    imgAlt: "Cropped image of this site",
+    name: "Portfolio Site",
+    techs: [
+      { label: "Javascript", colorClass: "javaColor" },
+      { label: "Figma", colorClass: "figmaColor" },
+    ],
+  },
+  {
+    href: "#",
+    imgSrc: chatboard,
+    imgAlt: "Cropped image of a Figma diagram",
+    name: "Chatboard",
+    techs: [
+      { label: "Figma", colorClass: "figmaColor" },
+    ],
+  },
+  {
+    href: "#",
+    imgSrc: php,
+    imgAlt: "Cropped image of a website displaying multiple activities that can be done in the ocean",
+    name: "Seabase Remake",
+    techs: [
+      { label: "Figma", colorClass: "figmaColor" },
+      { label: "PHP", colorClass: "phpColor" },
+      { label: "MongoDB", colorClass: "mongoColor" },
+    ],
+  },
+  {
+    href: "#",
+    imgSrc: recipes,
+    imgAlt: "A platter of food",
+    name: "Recipes at Midnight\n(Deprecated)",
+    techs: [
+      { label: "Javascript", colorClass: "javaColor" },
+      { label: "React", colorClass: "reactColor" },
+      { label: "MongoDB", colorClass: "mongoColor" },
+    ],
+  },
+  {
+    href: "#",
+    imgSrc: rps,
+    imgAlt: "Three hands representing the game rock-paper-scissors",
+    name: "Rock Paper Showdown\n(Deprecated)",
+    nameClass: "rockPaper",
+    techs: [
+      { label: "Javascript", colorClass: "javaColor" },
+      { label: "React", colorClass: "reactColor" },
+      { label: "MongoDB", colorClass: "mongoColor" },
+    ],
+  },
+  {
+    href: "#",
+    imgSrc: blackjack,
+    imgAlt: "A cropped image of a round of blackjack",
+    name: "Blackjack",
+    techs: [
+      { label: "Swift", colorClass: "swiftColor" },
+      { label: "Figma", colorClass: "figmaColor" },
+    ],
+  },
+];
+---
+
+<section class="myPorjects" id="projects">
+  <h2 class="sectionTitle" id="sectionProjects">Projects</h2>
+  <div id="portfolio">
+    {projects.map((project) => <Project {...project} />)}
+  </div>
+</section>
+
+<style>
+  .myPorjects {
+    background-color: var(--clr-background);
+    color: var(--clr-light);
+    text-align: center;
+  }
+
+  #sectionProjects {
+    color: var(--clr-lightText);
+  }
+
+  #sectionProjects::after {
+    content: "";
+    display: block;
+    width: 2em;
+    height: 1px;
+    margin: 0.5em auto 1em;
+    background: var(--clr-light);
+    opacity: 0.5;
+  }
+
+  #portfolio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 0.5em;
+  }
+</style>

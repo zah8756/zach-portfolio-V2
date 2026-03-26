@@ -28,6 +28,9 @@
 	--clr-socketIO: #25c2a0;
 	--clr-php: #8993be;
 	--clr-git: #f1502f;
+	--clr-claude: #d97757;
+	--clr-tailwind: #38bdf8;
+	--clr-typescript: #3178c6;
 
 	--fw-reg: 300;
 	--fw-bold: 900;
@@ -69,7 +72,7 @@ body {
 	font-size: var(--fs-body);
 	line-height: 1.6;
 	font-family: var(--ff-primary);
-	overflow-x: hidden;
+	overflow-x: clip;
 }
 
 main {
@@ -218,7 +221,7 @@ header {
 }
 
 .icons {
-	position: absolute;
+	position: fixed;
 	right: 5%;
 	font-size: 2.2rem;
 	color: #fff;
@@ -242,8 +245,8 @@ header {
 		display: block;
 	}
 	#nav {
-		position: absolute;
-		top: 100%;
+		position: fixed;
+		top: 0;
 		left: 0;
 		width: 100%;
 		height: 0;
@@ -258,6 +261,10 @@ header {
 	#check:checked ~ #nav {
 		height: 17.7rem;
 	}
+
+	#navList {
+		padding-top: 1rem;
+	}
 	#nav a {
 		font-size: 1.1rem;
 		margin: 1.5rem 0;
@@ -270,6 +277,7 @@ header {
 	#navList {
 		flex-direction: column;
 		gap: 0;
+		padding-top: 1rem;
 	}
 
 	#check:checked ~ #nav a {
@@ -397,361 +405,7 @@ header {
 	border-color: var(--clr-accent);
 }
 
-/* My Skills section */
 
-.mySkills {
-	color: var(--clr-light);
-	text-align: center;
-}
-
-#sectionSkills {
-	text-align: center;
-	color: var(--clr-lightText);
-}
-
-#sectionSkills::after {
-	content: "";
-	display: block;
-	width: 2em;
-	height: 1px;
-	margin: 0.5em auto 1rem;
-	background: var(--clr-light);
-	opacity: 0.5;
-}
-
-#skillWraper {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-	gap: 1.5rem;
-	max-width: 1400px;
-	margin: 0 auto;
-	margin-top: 2em;
-}
-
-.skill {
-	padding: 1rem;
-	display: flex;
-	width: 100%;
-	border: 1px solid #5f615b;
-	border-radius: 0.75rem;
-	transition: all;
-	transition-timing-function: cubic-bezier(0.5, 0.2, 0.5, 1);
-	transition-duration: 0.4s;
-}
-
-.skill:hover,
-.skill:hover svg {
-	fill: var(--clr-lightText);
-	border-color: var(--clr-lightText);
-}
-
-#skillJavascript:hover,
-#skillJavascript:hover svg {
-	fill: var(--clr-js);
-	border-color: var(--clr-js);
-}
-
-#skillReact:hover,
-#skillReact:hover svg {
-	fill: var(--clr-react);
-	border-color: var(--clr-react);
-}
-
-#skillAngular:hover,
-#skillAngular:hover svg {
-	fill: var(--clr-angular);
-	border-color: var(--clr-angular);
-}
-
-#skillPhp:hover,
-#skillPhp:hover svg {
-	fill: var(--clr-php);
-	border-color: var(--clr-php);
-}
-
-#skillFigma:hover,
-#skillFigma:hover svg {
-	fill: var(--clr-figma);
-	border-color: var(--clr-figma);
-}
-
-#skillGit:hover,
-#skillGit:hover svg {
-	fill: var(--clr-git);
-	border-color: var(--clr-git);
-}
-
-#skillSwift:hover,
-#skillSwift:hover svg {
-	fill: var(--clr-swift);
-	border-color: var(--clr-swift);
-}
-
-.skillContainer {
-	display: flex;
-	gap: 1rem;
-	align-items: center;
-}
-
-.skillImg {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 3rem;
-	height: 3rem;
-	flex-shrink: 0;
-}
-
-.skillText {
-	display: flex;
-	flex-direction: column;
-	gap: 0.2em;
-	align-items: start;
-	margin-top: 5%;
-}
-
-.skillText p {
-	margin: 0;
-	color: #b2b4adc4;
-	font-family: var(--ff-secondary);
-}
-
-svg {
-	fill: var(--clr-light);
-	width: 3em;
-	height: 100%;
-}
-
-/* History section */
-.my-history {
-	color: var(--clr-light);
-	text-align: center;
-}
-
-#sectionHistory {
-	color: var(--clr-lightText);
-	position: relative;
-}
-
-#sectionHistory::after {
-	content: "";
-	display: block;
-	width: 2em;
-	height: 1px;
-	margin: 0.5em auto 1em;
-	background: var(--clr-light);
-	opacity: 0.5;
-}
-
-#education {
-	max-width: 800px;
-	margin: 0 auto;
-	padding: 0;
-	border: 1px solid #5f615b;
-	border-radius: 0.75rem;
-}
-
-.educationList {
-	margin-left: 2.5rem;
-	text-align: start;
-	list-style: none;
-}
-.eduObject {
-	position: relative;
-	padding-top: 1rem;
-	padding-bottom: 1rem;
-	margin-left: 1.5rem;
-}
-
-.eduTarget {
-	position: absolute;
-	display: flex;
-	width: 3rem;
-	height: 3rem;
-	background: var(--clr-light);
-	border-radius: 9999px;
-	left: -4rem;
-	top: 2rem;
-}
-
-.eduImgWraper {
-	overflow: hidden;
-}
-
-.eduImg {
-	object-fit: contain;
-	width: 100%;
-	height: 100%;
-	aspect-ratio: 1/1;
-}
-
-.eduInfo {
-	gap: 0.25rem;
-	display: flex;
-	justify-content: start;
-	flex-direction: column;
-}
-
-.eduTitle,
-.eduDate {
-	color: #b2b4adc4;
-	margin: 0;
-	font-family: var(--ff-secondary);
-}
-
-.eduInfo h3 {
-	padding-right: 1.5rem;
-}
-
-.eduInfo li {
-	padding-right: 2.5rem;
-	line-height: 1.75rem;
-	margin: 10px 0;
-}
-
-/* projects section */
-
-.myPorjects {
-	background-color: var(--clr-background);
-	color: var(--clr-light);
-	text-align: center;
-}
-
-#sectionProjects {
-	color: var(--clr-lightText);
-}
-
-#sectionProjects::after {
-	content: "";
-	display: block;
-	width: 2em;
-	height: 1px;
-	margin: 0.5em auto 1em;
-	background: var(--clr-light);
-	opacity: 0.5;
-}
-
-#portfolio {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-	max-width: 1400px;
-	margin: 0 auto;
-	gap: 0.5em;
-}
-
-.portfolioItem {
-	background: var(--clr-accent);
-	margin: 0 auto;
-	overflow: hidden;
-	position: relative;
-	text-decoration: none;
-	border-radius: 15px;
-}
-
-.portfolioImg,
-.projectContainer,
-.portfolioItem .techContainer {
-	transition:
-		transform 750ms cubic-bezier(0.5, 0, 0.5, 1),
-		opacity 250ms linear,
-		visibility 250ms;
-}
-
-.portfolioImg {
-	max-height: 480px;
-}
-
-.portfolioItem:focus {
-	position: relative;
-	z-index: 2;
-}
-
-.portfolioItem:hover .portfolioImg,
-.portfolioItem:focus .portfolioImg {
-	transform: scale(1.2);
-	opacity: 0.25;
-}
-
-.itemName {
-	text-transform: uppercase;
-	color: white;
-	display: inline-block;
-	margin: 0;
-	font-size: var(--fs-itemName);
-	font-weight: bold;
-
-	align-self: flex-end;
-}
-
-.rockPaper {
-	width: min-content;
-}
-
-.itemName::after {
-	content: "";
-	display: block;
-	height: 3px;
-	margin-bottom: 0.2em;
-	background: var(--clr-light);
-	/* opacity: 0.5; */
-}
-
-.techContainer {
-	z-index: 1000;
-	display: grid;
-	grid-template-rows: 1fr 1fr;
-	/* flex-direction: column; */
-	width: 100%;
-	height: 100%;
-	/* justify-content: center; */
-	place-items: center;
-	/* max-width: 300px; */
-	visibility: hidden;
-	opacity: 0;
-}
-
-.portfolioItem:hover .techContainer,
-.portfolioItem:focus .techContainer {
-	visibility: visible;
-	opacity: 1;
-}
-
-.techItems {
-	display: flex;
-	gap: 0.3em 0.2em;
-	flex-wrap: wrap;
-	max-width: 300px;
-	/* min-height: 100px; */
-	justify-content: center;
-}
-
-.tech {
-	padding: 0.2em 1em;
-	border: 3px solid black;
-	border-radius: 900px;
-	margin: 0;
-	color: white;
-	font-size: 0.8em;
-	transition:
-		background-color 250ms linear,
-		border-color 250ms linear;
-}
-
-.tech:hover {
-	color: black;
-}
-
-.projectContainer {
-	display: grid;
-	place-items: center;
-	grid-template-rows: 1fr;
-}
-
-.techContainer,
-.portfolioImg {
-	grid-row: 1;
-	grid-column: 1;
-}
 
 /* footer section */
 
@@ -840,35 +494,6 @@ svg {
 	margin-right: auto;
 }
 
-/* technology section */
-
-.javaColor {
-	border-color: var(--clr-js);
-}
-
-.figmaColor {
-	border-color: var(--clr-figma);
-}
-
-.angularColor {
-	border-color: var(--clr-angular);
-}
-
-.reactColor {
-	border-color: var(--clr-react);
-}
-
-.mongoColor {
-	border-color: var(--clr-MongoDB);
-}
-
-.swiftColor {
-	border-color: var(--clr-swift);
-}
-
-.phpColor {
-	border-color: var(--clr-php);
-}
 
 /*indivual projects*/
 

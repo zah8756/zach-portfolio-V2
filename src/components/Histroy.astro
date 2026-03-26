@@ -1,0 +1,119 @@
+---
+import HistorySection from "./Sub-Components/historySection.astro";
+
+const entries = [
+    {
+    href: "https://www.omniwell.app/",
+    imgSrc: "/Omni.png",
+    imgAlt: "Omniwell Logo",
+    startDate: "August 2025",
+    endDate: "Present",
+    place: "Omni Wellness AI",
+    role: "Front-End Developer",
+    bulletPoints: [
+      "Build UI components and features for a React-based medical CMS providing remote patient management for clinics and pharmacies",
+      "Partner with the backend team to consume a custom API and surface patient data throughout the application",
+      "Navigating a live database migration from PostgreSQL to MongoDB, identifying and resolving front-end breakages caused by schema changes",
+      "Led the complete redesign of the patient information page — decomposed a single monolithic component into smaller, independently maintainable sections",
+    ],
+    },
+  {
+    href: "https://www.rit.edu/",
+    imgSrc: "/rit.png",
+    imgAlt: "RIT Logo",
+    startDate: "Aug 2020",
+    endDate: "May 2024",
+    place: "Rochester Institute of Technology",
+    role: "MS in Human Computer Interaction",
+    bulletPoints: [
+      "Graduated with a 3.8 GPA",
+      "Researched usability and how the pandemic affected students",
+      "Created a theoretical communication program called Chatboard in Figma and used their prototyping tool to conduct comprehensive usability testing",
+    ],
+  },
+  {
+    href: "https://www.rit.edu/news/professor-launches-jewish-play-project",
+    imgSrc: "/jpp.png",
+    imgAlt: "Jewish Play Project Logo",
+    startDate: "Aug 2020",
+    endDate: "May 2020",
+    place: "Jewish Play Project",
+    role: "Software Developer (Intern)",
+    bulletPoints: [
+      "Migrated the main server's database from a Google Form over to Airtable",
+      "Created a new client-side interface for displaying who made what invention using Timeline.JS",
+    ],
+  },
+  {
+    href: "https://www.cityhive.net/",
+    imgSrc: "/cityHive.png",
+    imgAlt: "cityHive Logo",
+    startDate: "Aug 2018",
+    endDate: "May 2018",
+    place: "City Hive",
+    role: "Software Developer (Intern)",
+    bulletPoints: [
+      "Built a new client-side user dashboard that displayed customer information using angular.js",
+      "Enhanced merchant-facing UI throughout the primary application",
+    ],
+  },
+  {
+    href: "https://www.rit.edu/",
+    imgSrc: "/rit.png",
+    imgAlt: "RIT Logo",
+    startDate: "Aug 2016",
+    endDate: "May 2020",
+    place: "Rochester Institute of Technology",
+    role: "BS in New Media Interactive Development",
+    bulletPoints: [
+      "Graduated Cum Laude",
+      "4-time recipient of the Dean's Honor List",
+    ],
+  },
+];
+---
+
+<section class="my-history" id="history">
+  <h2 class="sectionTitle" id="sectionHistory">History</h2>
+  <div id="education">
+    <ul class="educationList">
+      {entries.map((entry) => <HistorySection {...entry} />)}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .my-history {
+    color: var(--clr-light);
+    text-align: center;
+  }
+
+  #sectionHistory {
+    color: var(--clr-lightText);
+    position: relative;
+  }
+
+  #sectionHistory::after {
+    content: "";
+    display: block;
+    width: 2em;
+    height: 1px;
+    margin: 0.5em auto 1em;
+    background: var(--clr-light);
+    opacity: 0.5;
+  }
+
+  #education {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0;
+    border: 1px solid #5f615b;
+    border-radius: 0.75rem;
+  }
+
+  .educationList {
+    margin-left: 2.5rem;
+    text-align: start;
+    list-style: none;
+  }
+</style>

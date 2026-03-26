@@ -1,0 +1,96 @@
+---
+interface Props {
+  href: string;
+  imgSrc: string;
+  imgAlt: string;
+  startDate: string;
+  endDate: string;
+  place: string;
+  role: string;
+  bulletPoints: string[];
+}
+
+const { href, imgSrc, imgAlt, startDate, endDate, place, role, bulletPoints } = Astro.props;
+---
+
+<li class="eduObject">
+  <a class="eduTarget" href={href}>
+    <span class="eduImgWraper">
+      <img class="eduImg" src={imgSrc} alt={imgAlt} />
+    </span>
+  </a>
+  <div class="eduInfo">
+    <div class="eduDate">
+      <span>{startDate}</span>
+      <span>-</span>
+      <span>{endDate}</span>
+    </div>
+    <h3>{place}</h3>
+    <p class="eduTitle">{role}</p>
+    <ul>
+      {bulletPoints.map((point) => <li>{point}</li>)}
+    </ul>
+  </div>
+</li>
+
+<style>
+  .eduObject {
+    position: relative;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-left: 1.5rem;
+  }
+
+  .eduTarget {
+    position: absolute;
+    display: flex;
+    width: 3rem;
+    height: 3rem;
+    background: var(--clr-light);
+    border-radius: 9999px;
+    left: -4rem;
+    top: 2rem;
+  }
+
+  .eduImgWraper {
+    overflow: hidden;
+  }
+
+  .eduImg {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1/1;
+  }
+
+  .eduInfo {
+    gap: 0.25rem;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+  }
+
+  .eduInfo h3 {
+    padding-right: 1.5rem;
+  }
+
+  .eduInfo li {
+    padding-right: 2.5rem;
+    line-height: 1.75rem;
+    margin: 10px 0;
+  }
+
+  .eduTitle {
+    color: #b2b4adc4;
+    margin: 0;
+    font-family: var(--ff-secondary);
+  }
+
+  .eduDate {
+    color: #b2b4adc4;
+    margin: 0;
+    font-family: var(--ff-secondary);
+    display: flex;
+    gap: 0.25rem;
+  }
+</style>

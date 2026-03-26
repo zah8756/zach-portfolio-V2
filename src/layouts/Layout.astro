@@ -36,7 +36,7 @@ import '../styles/global.css';
 		<footer id="footerSection">
 			<div class="spacer">
 				<div class="footSpace">
-					<p id="footDate">&#169; 2024</p>
+					<p id="footDate">&#169; 2026</p>
 					<a href="#" id="footerLink">zachh.dev</a>
 				</div>
 				<ul class="socialList">
@@ -48,6 +48,17 @@ import '../styles/global.css';
 		</footer>
 	</body>
 </html>
+
+<script>
+  const navToggle = document.querySelector<HTMLInputElement>('#check');
+  const navLinks = document.querySelectorAll('.navLink');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (navToggle) navToggle.checked = false;
+    });
+  });
+</script>
 
 <style is:global>
 	html,
