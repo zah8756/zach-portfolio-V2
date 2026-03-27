@@ -2,24 +2,26 @@
 import Project from "./Sub-Components/project.astro";
 import mysiteFix from "../assets/mysiteFix.png";
 import chatboard from "../assets/Chatboard.png";
+import mtgdle from "../assets/mtgdle.png";
 import php from "../assets/PHP.png";
+import blackjack from "../assets/BlackJackSquare.png";
 import recipes from "../assets/recipes.png";
 import rps from "../assets/RPS.png";
-import blackjack from "../assets/BlackJackSquare.png";
 
 const projects = [
   {
-    href: "#",
+    href: "/projects/portfolio",
     imgSrc: mysiteFix,
-    imgAlt: "Cropped image of this site",
+    imgAlt: "Cropped image of this portfolio site",
     name: "Portfolio Site",
     techs: [
-      { label: "Javascript", colorClass: "javaColor" },
+      { label: "Typescript", colorClass: "typescriptColor" },
       { label: "Figma", colorClass: "figmaColor" },
+      { label: "Astro", colorClass: "astroColor" },
     ],
   },
   {
-    href: "#",
+    href: "/projects/chatboard",
     imgSrc: chatboard,
     imgAlt: "Cropped image of a Figma diagram",
     name: "Chatboard",
@@ -28,9 +30,20 @@ const projects = [
     ],
   },
   {
-    href: "#",
+    href: "/projects/mtgdle",
+    imgSrc: mtgdle,
+    imgAlt: "Cropped image of the MTGdle game interface",
+    name: "MTGdle",
+    techs: [
+      { label: "React", colorClass: "reactColor" },
+      { label: "Tailwind CSS", colorClass: "tailwindColor" },
+      { label: "Typescript", colorClass: "typescriptColor" },
+    ],
+  },
+  {
+    href: "/projects/seabase",
     imgSrc: php,
-    imgAlt: "Cropped image of a website displaying multiple activities that can be done in the ocean",
+    imgAlt: "Cropped image of a website displaying ocean activities",
     name: "Seabase Remake",
     techs: [
       { label: "Figma", colorClass: "figmaColor" },
@@ -39,30 +52,7 @@ const projects = [
     ],
   },
   {
-    href: "#",
-    imgSrc: recipes,
-    imgAlt: "A platter of food",
-    name: "Recipes at Midnight\n(Deprecated)",
-    techs: [
-      { label: "Javascript", colorClass: "javaColor" },
-      { label: "React", colorClass: "reactColor" },
-      { label: "MongoDB", colorClass: "mongoColor" },
-    ],
-  },
-  {
-    href: "#",
-    imgSrc: rps,
-    imgAlt: "Three hands representing the game rock-paper-scissors",
-    name: "Rock Paper Showdown\n(Deprecated)",
-    nameClass: "rockPaper",
-    techs: [
-      { label: "Javascript", colorClass: "javaColor" },
-      { label: "React", colorClass: "reactColor" },
-      { label: "MongoDB", colorClass: "mongoColor" },
-    ],
-  },
-  {
-    href: "#",
+    href: "/projects/blackjack",
     imgSrc: blackjack,
     imgAlt: "A cropped image of a round of blackjack",
     name: "Blackjack",
@@ -83,7 +73,6 @@ const projects = [
 
 <style>
   .myPorjects {
-    background-color: var(--clr-background);
     color: var(--clr-light);
     text-align: center;
   }
@@ -95,11 +84,11 @@ const projects = [
   #sectionProjects::after {
     content: "";
     display: block;
-    width: 2em;
-    height: 1px;
+    width: 4em;
+    height: 3px;
     margin: 0.5em auto 1em;
-    background: var(--clr-light);
-    opacity: 0.5;
+    background: linear-gradient(90deg, transparent, var(--clr-accent), transparent);
+    border-radius: 2px;
   }
 
   #portfolio {

@@ -48,18 +48,20 @@ const { href, imgSrc, imgAlt, name, nameClass = "", techs } = Astro.props;
     z-index: 2;
   }
 
-  .portfolioImg,
-  .projectContainer,
-  .techContainer {
-    transition:
-      transform 750ms cubic-bezier(0.5, 0, 0.5, 1),
-      opacity 250ms linear,
-      visibility 250ms;
+  .projectContainer {
+    position: relative;
+    overflow: hidden;
   }
 
   .portfolioImg {
-    max-height: 480px;
+    display: block;
     width: 100%;
+    height: 480px;
+    object-fit: cover;
+    object-position: top;
+    transition:
+      transform 750ms cubic-bezier(0.5, 0, 0.5, 1),
+      opacity 250ms linear;
   }
 
   .portfolioItem:hover .portfolioImg,
@@ -68,28 +70,23 @@ const { href, imgSrc, imgAlt, name, nameClass = "", techs } = Astro.props;
     opacity: 0.25;
   }
 
-  .projectContainer {
-    display: grid;
-    place-items: center;
-    grid-template-rows: 1fr;
-  }
-
   .techContainer {
-    grid-row: 1;
-    grid-column: 1;
-    z-index: 1000;
-    display: grid;
-    grid-template-rows: 1fr 1fr;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    place-items: center;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
     visibility: hidden;
     opacity: 0;
-  }
-
-  .portfolioImg {
-    grid-row: 1;
-    grid-column: 1;
+    transition:
+      opacity 250ms linear,
+      visibility 250ms;
   }
 
   .portfolioItem:hover .techContainer,
@@ -105,7 +102,6 @@ const { href, imgSrc, imgAlt, name, nameClass = "", techs } = Astro.props;
     margin: 0;
     font-size: var(--fs-itemName);
     font-weight: bold;
-    align-self: flex-end;
   }
 
   .itemName::after {
@@ -124,8 +120,8 @@ const { href, imgSrc, imgAlt, name, nameClass = "", techs } = Astro.props;
     display: flex;
     gap: 0.3em 0.2em;
     flex-wrap: wrap;
-    max-width: 300px;
     justify-content: center;
+    padding: 0 1rem;
   }
 
   .tech {
@@ -153,4 +149,7 @@ const { href, imgSrc, imgAlt, name, nameClass = "", techs } = Astro.props;
   .mongoColor   { --tech-color: var(--clr-MongoDB); }
   .swiftColor   { --tech-color: var(--clr-swift); }
   .phpColor     { --tech-color: var(--clr-php); }
+  .astroColor   { --tech-color: var(--clr-astro); }
+  .typescriptColor { --tech-color: var(--clr-typescript); }
+  .tailwindColor { --tech-color: var(--clr-tailwind); }
 </style>

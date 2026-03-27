@@ -1,0 +1,19 @@
+---
+import ProjectLayout from "../../layouts/ProjectLayout.astro";
+import recipes from "../../assets/recipes.png";
+---
+
+<ProjectLayout
+  title="Recipes at Midnight"
+  subtitle="A recipe discovery app (Deprecated)"
+  img={recipes}
+  imgAlt="A platter of food"
+  techs={[
+    { label: "Javascript", colorClass: "javaColor" },
+    { label: "React", colorClass: "reactColor" },
+    { label: "MongoDB", colorClass: "mongoColor" },
+  ]}
+>
+  <p>A late-night recipe browsing app built with React and a MongoDB backend.</p>
+  <p>This project is no longer maintained.</p>
+</ProjectLayout>

@@ -32,11 +32,16 @@ const { id, name, label, svgPath, viewBox = "0 0 448 512", hoverColor = "var(--c
     width: 100%;
     border: 1px solid #5f615b;
     border-radius: 0.75rem;
-    transition: border-color 0.4s cubic-bezier(0.5, 0.2, 0.5, 1);
+    box-shadow: 0 0 0 transparent;
+    transition:
+      border-color 0.4s cubic-bezier(0.5, 0.2, 0.5, 1),
+      box-shadow 0.4s cubic-bezier(0.5, 0.2, 0.5, 1);
+    cursor: default;
   }
 
   .skill:hover {
     border-color: var(--hover-color);
+    box-shadow: 0 0 20px var(--hover-color);
   }
 
   .skill:hover svg {

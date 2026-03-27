@@ -1,0 +1,20 @@
+---
+import ProjectLayout from "../../layouts/ProjectLayout.astro";
+import mtgdle from "../../assets/mtgdle.png";
+---
+
+<ProjectLayout
+  title="MTGdle"
+  subtitle="A Wordle-style guessing game for Magic: The Gathering cards"
+  img={mtgdle}
+  imgAlt="Cropped image of the MTGdle game interface"
+  techs={[
+    { label: "React", colorClass: "reactColor" },
+    { label: "Tailwind CSS", colorClass: "tailwindColor" },
+    { label: "Typescript", colorClass: "typescriptColor" },
+  ]}
+  githubUrl="https://github.com/zah8756"
+>
+  <p>A daily card-guessing game built with React and TypeScript, inspired by Wordle.</p>
+  <p>Players guess a Magic: The Gathering card based on attribute hints — color, type, mana cost, set, and subtype — with color-coded feedback on each guess.</p>
+</ProjectLayout>

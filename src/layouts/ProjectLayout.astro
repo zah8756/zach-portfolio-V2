@@ -1,0 +1,170 @@
+---
+import { Image } from "astro:assets";
+import Layout from "./Layout.astro";
+import type { ImageMetadata } from "astro";
+import type { Tech } from "../data/projects";
+
+interface Props {
+  title: string;
+  subtitle: string;
+  img: ImageMetadata;
+  imgAlt: string;
+  techs: Tech[];
+  githubUrl?: string;
+}
+
+const { title, subtitle, img, imgAlt, techs, githubUrl } = Astro.props;
+---
+
+<Layout title={title}>
+  <section class="intro" id="home">
+    <h1 class="sectionTitle" id="sectionIntro">
+      <strong>{title}</strong>
+    </h1>
+    <p class="sectionSubtitle" id="pSubtitle">{subtitle}</p>
+    <Image src={img} alt={imgAlt} id="introImage" />
+    <div id="introLinks" class="techIndi">
+      {githubUrl && (
+        <a href={githubUrl} target="_blank" rel="noopener noreferrer" id="sourceButton">
+          <span>Source Code</span>
+          <i class="fa-brands fa-github"></i>
+        </a>
+      )}
+      <div class="techItems pTech">
+        {techs.map((tech) => (
+          <p class={`tech ${tech.colorClass}`}>{tech.label}</p>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="writeup">
+    <slot />
+  </section>
+</Layout>
+
+<style>
+  .intro {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5rem 2rem 2rem;
+    max-width: 740px;
+    margin: 0 auto;
+  }
+
+  #pSubtitle {
+    display: inline-block;
+    background: var(--clr-accent);
+    padding: 0.25em 1em;
+    font-family: var(--ff-secondary);
+    font-size: var(--fs-h3);
+    margin-bottom: 1em;
+  }
+
+  #introImage {
+    box-shadow: var(--bs);
+    margin-bottom: 2em;
+    max-width: 100%;
+    height: auto;
+  }
+
+  #introLinks {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1rem;
+    padding: 0;
+    color: var(--clr-lightText);
+    font-size: 1.2rem;
+  }
+
+  #sourceButton {
+    display: inline-flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    font-size: var(--fs-body);
+    color: var(--clr-accent);
+    background-color: var(--clr-lightText);
+    border: 1px solid var(--clr-lightText);
+    border-radius: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    transition:
+      background-color 250ms linear,
+      border-color 250ms linear,
+      color 250ms linear;
+  }
+
+  #sourceButton:hover {
+    background-color: var(--clr-accent);
+    color: var(--clr-lightText);
+    border-color: var(--clr-accent);
+  }
+
+  .techIndi .techItems {
+    justify-content: left;
+  }
+
+  .pTech {
+    max-width: 400px;
+    display: flex;
+    gap: 0.3em 0.2em;
+    flex-wrap: wrap;
+  }
+
+  .tech {
+    padding: 0.2em 1em;
+    border: 3px solid var(--tech-color, black);
+    border-radius: 900px;
+    margin: 0;
+    color: white;
+    font-size: 0.8em;
+    transition:
+      background-color 250ms linear,
+      color 250ms linear;
+  }
+
+  .tech:hover {
+    background-color: var(--tech-color, white);
+    color: black;
+  }
+
+  .javaColor      { --tech-color: var(--clr-js); }
+  .figmaColor     { --tech-color: var(--clr-figma); }
+  .angularColor   { --tech-color: var(--clr-angular); }
+  .reactColor     { --tech-color: var(--clr-react); }
+  .mongoColor     { --tech-color: var(--clr-MongoDB); }
+  .swiftColor     { --tech-color: var(--clr-swift); }
+  .phpColor       { --tech-color: var(--clr-php); }
+  .typescriptColor { --tech-color: #3178c6; }
+  .tailwindColor  { --tech-color: #38bdf8; }
+  .astroColor     { --tech-color: #ff5d01; }
+  
+
+  .writeup {
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 0 2rem 4rem;
+    font-size: 1.1em;
+    line-height: 1.8;
+  }
+
+  .writeup :global(p) {
+    margin-bottom: 1em;
+  }
+
+  .writeup :global(h2) {
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+    font-size: var(--fs-h3);
+    color: var(--clr-lightText);
+  }
+
+  .writeup :global(img) {
+    max-width: 100%;
+    border-radius: 0.5rem;
+    margin: 1.5em 0;
+  }
+</style>

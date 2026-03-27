@@ -1,0 +1,19 @@
+---
+import ProjectLayout from "../../layouts/ProjectLayout.astro";
+import rps from "../../assets/RPS.png";
+---
+
+<ProjectLayout
+  title="Rock Paper Showdown"
+  subtitle="A Rock Paper Scissors game (Deprecated)"
+  img={rps}
+  imgAlt="Three hands representing rock, paper, and scissors"
+  techs={[
+    { label: "Javascript", colorClass: "javaColor" },
+    { label: "React", colorClass: "reactColor" },
+    { label: "MongoDB", colorClass: "mongoColor" },
+  ]}
+>
+  <p>A browser-based Rock Paper Scissors game built with React.</p>
+  <p>This project is no longer maintained.</p>
+</ProjectLayout>

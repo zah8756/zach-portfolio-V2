@@ -1,0 +1,19 @@
+---
+import ProjectLayout from "../../layouts/ProjectLayout.astro";
+import php from "../../assets/PHP.png";
+---
+
+<ProjectLayout
+  title="Seabase Remake"
+  subtitle="A full-stack remake of a diving activity booking site"
+  img={php}
+  imgAlt="Cropped image of a website displaying ocean activities"
+  techs={[
+    { label: "Figma", colorClass: "figmaColor" },
+    { label: "PHP", colorClass: "phpColor" },
+    { label: "MongoDB", colorClass: "mongoColor" },
+  ]}
+>
+  <p>A redesign and rebuild of an existing ocean activity booking platform.</p>
+  <p>Built with PHP on the backend and MongoDB for data storage, with the UI redesigned from scratch in Figma before implementation.</p>
+</ProjectLayout>

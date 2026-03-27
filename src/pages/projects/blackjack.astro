@@ -1,0 +1,19 @@
+---
+import ProjectLayout from "../../layouts/ProjectLayout.astro";
+import blackjack from "../../assets/BlackJackSquare.png";
+---
+
+<ProjectLayout
+  title="Blackjack"
+  subtitle="My attempt to recreate Blackjack in Swift"
+  img={blackjack}
+  imgAlt="A cropped image of a round of blackjack"
+  techs={[
+    { label: "Swift", colorClass: "swiftColor" },
+    { label: "Figma", colorClass: "figmaColor" },
+  ]}
+  githubUrl="https://github.com/zah8756/finalProject_BlackJack"
+>
+  <p>The final project of my Multi-platform Media App Dev course at RIT.</p>
+  <p>Built entirely in Xcode and Swift, developing the blackjack game logic from scratch — including every interaction between players and the dealer across each round of play.</p>
+</ProjectLayout>

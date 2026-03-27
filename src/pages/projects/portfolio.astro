@@ -1,0 +1,20 @@
+---
+import ProjectLayout from "../../layouts/ProjectLayout.astro";
+import mysiteFix from "../../assets/mysiteFix.png";
+---
+
+<ProjectLayout
+  title="Portfolio Site"
+  subtitle="The site you're looking at right now"
+  img={mysiteFix}
+  imgAlt="Cropped image of this portfolio site"
+  techs={[
+    { label: "Typescript", colorClass: "typescriptColor" },
+    { label: "Figma", colorClass: "figmaColor" },
+    { label: "Astro", colorClass: "astroColor" },
+  ]}
+  githubUrl="https://github.com/zah8756"
+>
+  <p>A personal portfolio site built from scratch in Astro.</p>
+  <p>Designed with a component-driven architecture — each section is a self-contained Astro component with locally scoped CSS.</p>
+</ProjectLayout>
