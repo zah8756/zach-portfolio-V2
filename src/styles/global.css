@@ -8,6 +8,7 @@
 :root {
 	--ff-primary: "Poppins", sans-serif;
 	--ff-secondary: "Pragati Narrow", sans-serif;
+	--ff-display: "Raleway", sans-serif;
 
 	--clr-light: #eff1ec;
 	--clr-dark: #18051f;
@@ -130,6 +131,7 @@ h2,
 h3 {
 	line-height: 1;
 	margin: 0;
+	font-family: var(--ff-display);
 }
 
 h1 {
@@ -217,7 +219,8 @@ header {
 
 .navLink {
 	color: inherit;
-	font-weight: var(--fw-bold);
+	font-family: var(--ff-display);
+	font-weight: 700;
 	font-size: var(--fs-h3);
 	text-decoration: none;
 	padding: 0.5rem;

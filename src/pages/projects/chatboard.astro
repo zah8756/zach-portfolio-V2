@@ -5,13 +5,453 @@ import chatboard from "../../assets/Chatboard.png";
 
 <ProjectLayout
   title="Chatboard"
-  subtitle="A theoretical communication platform designed in Figma"
+  subtitle="UX Research & Usability Study — RIT HCI"
   img={chatboard}
   imgAlt="Cropped image of a Figma diagram"
   techs={[
     { label: "Figma", colorClass: "figmaColor" },
   ]}
 >
-  <p>Created as part of my MS in Human Computer Interaction research at RIT.</p>
-  <p>Designed a theoretical communication program and used Figma's prototyping tools to conduct comprehensive usability testing with real participants.</p>
+  <div class="cs">
+
+    <!-- META ROW -->
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Role</div>
+        <div class="meta-value">Solo Researcher &amp; Designer</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Timeline</div>
+        <div class="meta-value">2023 – 2024</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Methods</div>
+        <div class="meta-value">Mixed Methods Usability Study</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Tools</div>
+        <div class="meta-value">Figma, Google Forms</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Context</div>
+        <div class="meta-value">MS Capstone — RIT HCI</div>
+      </div>
+    </div>
+
+    <!-- 01 PROBLEM -->
+    <section class="cs-section">
+      <div class="cs-label">01 — Problem</div>
+      <h2 class="cs-h2">Students hate using Slack and Discord for class. Why?</h2>
+      <p class="cs-p">During and after COVID-19, students were pushed into tools like Zoom, Discord, and Slack for academic communication. These programs weren't designed for education — and students knew it. In preliminary interviews, students described Discord as "not professional enough" and said they actively disliked using Slack for coursework.</p>
+      <p class="cs-p">More than 80% of participants were using digital backchannel programs multiple times a week for academic reasons — and yet many were unsatisfied with what was available. The core problem: every existing tool was either too casual, too enterprise, or spread across too many separate apps.</p>
+      <p class="cs-p">My goal was to design and test a classroom-native alternative — a single platform that combined the communication features students rely on, purpose-built for an academic environment.</p>
+    </section>
+
+    <!-- 02 DESIGN -->
+    <section class="cs-section">
+      <div class="cs-label">02 — Design</div>
+      <h2 class="cs-h2">Chatboard: One app built for students</h2>
+      <p class="cs-p">I designed Chatboard in Figma as a digital backchannel that integrates features from existing tools into a single, classroom-focused platform. The key differentiator was a built-in collaborative whiteboard — allowing students to share ideas visually within the same environment where they were already communicating.</p>
+      <p class="cs-p">The UI deliberately drew on Discord and Slack's familiar layout patterns to reduce onboarding friction, while introducing a structure designed around academic workflows: organized by class, not by server or workspace.</p>
+
+      <blockquote class="cs-quote">
+        <p>"I liked the diagram part. I think it's interesting — there's a public whiteboard for every student to share something. You need that visual, especially for an online feature."</p>
+        <cite>— Participant 4</cite>
+      </blockquote>
+      <blockquote class="cs-quote">
+        <p>"The whiteboard aspect is very interesting. There's been many times in a chat where it'd be very useful to use drawing. To do that you'd need to share your screen and go to an external program. So having something built in seems super valuable."</p>
+        <cite>— Participant 1</cite>
+      </blockquote>
+    </section>
+
+    <!-- 03 PROCESS -->
+    <section class="cs-section">
+      <div class="cs-label">03 — Research Process</div>
+      <h2 class="cs-h2">How the study was structured</h2>
+      <div class="process-steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-content">
+            <h3>Preliminary Interviews</h3>
+            <p>Conducted one-on-one interviews to understand how students were currently using digital backchannels and what pain points they experienced with existing tools.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-content">
+            <h3>Prototype Design in Figma</h3>
+            <p>Built a high-fidelity interactive prototype in Figma, incorporating features identified during preliminary research — including the signature collaborative whiteboard.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-content">
+            <h3>Usability Testing — 21 Participants</h3>
+            <p>Recruited participants ranging from second-year undergraduates to PhD students at RIT — all regularly using digital backchannels in coursework. Each completed 5 structured tasks while thinking aloud.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <div class="step-content">
+            <h3>Pre-Task Survey + Exit Interviews</h3>
+            <p>Collected baseline data on current tool usage before testing, then conducted exit interviews to capture deeper qualitative feedback on the prototype and existing tools.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">05</div>
+          <div class="step-content">
+            <h3>Mixed Methods Analysis</h3>
+            <p>Analyzed quantitative task data (completion rates, time-on-task, click counts) and qualitative interview data through thematic coding, then synthesized across both datasets.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 RESULTS -->
+    <section class="cs-section">
+      <div class="cs-label">04 — Results</div>
+      <h2 class="cs-h2">What the data showed</h2>
+      <p class="cs-p">Participants completed five tasks simulating a new student's first experience with Chatboard. The results revealed which interaction patterns worked — and where the design needed refinement.</p>
+      <div class="table-wrap">
+        <table class="task-table">
+          <thead>
+            <tr>
+              <th>Task</th>
+              <th>Goal</th>
+              <th>Completion</th>
+              <th>Key Finding</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Task 1</td>
+              <td>Create a new account</td>
+              <td><span class="pill high">100%</span></td>
+              <td>Single clear path; no ambiguity in onboarding flow</td>
+            </tr>
+            <tr>
+              <td>Task 2</td>
+              <td>Navigate to a classroom</td>
+              <td><span class="pill high">95.2%</span></td>
+              <td>14 of 21 users needed clarification — non-interactive UI elements caused confusion</td>
+            </tr>
+            <tr>
+              <td>Task 3</td>
+              <td>Send a public chat message</td>
+              <td><span class="pill high">95.2%</span></td>
+              <td>Highest researcher intervention rate — only 3 clicks needed once understood</td>
+            </tr>
+            <tr>
+              <td>Task 4</td>
+              <td>DM the professor</td>
+              <td><span class="pill med">85.7%</span></td>
+              <td>11 participants frustrated by missing shortcut to professor — a near-universal expectation</td>
+            </tr>
+            <tr>
+              <td>Task 5</td>
+              <td>Draw on the whiteboard</td>
+              <td><span class="pill high">100%</span></td>
+              <td>Prior app experience accelerated completion — learnability improved over time</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 05 FINDINGS -->
+    <section class="cs-section">
+      <div class="cs-label">05 — Key Findings</div>
+      <h2 class="cs-h2">Four themes from participant interviews</h2>
+      <div class="findings-grid">
+        <div class="finding-card">
+          <h3>Prototype Limitations</h3>
+          <p>17 of 21 participants identified issues in three areas: a non-interactive sidebar creating false affordances, missing navigation shortcuts, and the absence of hover states users expected.</p>
+        </div>
+        <div class="finding-card">
+          <h3>Whiteboard Was the Standout</h3>
+          <p>Consistently cited as the most compelling differentiator — something participants hadn't seen in existing classroom tools and identified as genuinely useful for group work and instruction.</p>
+        </div>
+        <div class="finding-card">
+          <h3>Frustration with Existing Tools</h3>
+          <p>Discord felt too informal, Slack felt disconnected from coursework, and professors were often hard to reach on both platforms.</p>
+        </div>
+        <div class="finding-card">
+          <h3>Strong Preference for Chatboard</h3>
+          <p>Despite usability issues, the majority said they'd prefer Chatboard over their current tools if it were a finished product.</p>
+        </div>
+      </div>
+
+      <blockquote class="cs-quote">
+        <p>"I would definitely use it if it became an app. It combines Discord features with things you actually need in class."</p>
+        <cite>— Participant 18</cite>
+      </blockquote>
+      <blockquote class="cs-quote">
+        <p>"I like that you have the teacher participating — they don't participate in Discord."</p>
+        <cite>— Participant 11</cite>
+      </blockquote>
+    </section>
+
+    <!-- 06 REFLECTION -->
+    <section class="cs-section">
+      <div class="reflection-box">
+        <div class="cs-label">06 — Reflection</div>
+        <h2 class="cs-h2">What I learned</h2>
+        <p class="cs-p">This was my first time designing and running a full usability study from scratch. A few takeaways I'd carry into future work:</p>
+        <ul class="learn-list">
+          <li>Non-interactive UI elements that look interactive are a silent UX killer. They don't show up in a design review — you only find them when you watch someone use the thing.</li>
+          <li>Users build mental models fast. By task 5, participants who struggled on task 2 were navigating confidently — learnability matters as much as discoverability.</li>
+          <li>The first task in the study wasn't pulling its weight. I'd cut it in a second iteration — it added time without producing useful data.</li>
+          <li>The next step for Chatboard would be building it in JavaScript so it can be tested in a live environment, enabling interactions Figma simply can't simulate.</li>
+        </ul>
+      </div>
+    </section>
+
+  </div>
 </ProjectLayout>
+
+<style>
+  /* ── LOCAL TOKENS ── */
+  .cs {
+    --rule: #5f615b;
+    --muted: rgba(233, 217, 255, 0.78);
+    --card-bg: #251540;
+    --accent-tint: rgba(87, 50, 128, 0.25);
+  }
+
+  /* ── META ROW ── */
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 0.5rem;
+  }
+  .meta-item {
+    flex: 1;
+    min-width: 120px;
+    padding: 1rem 0.75rem;
+    border-right: 1px solid var(--rule);
+  }
+  .meta-item:last-child { border-right: none; }
+  .meta-label {
+    font-family: monospace;
+    font-size: 0.92rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 400;
+    margin-bottom: 0.3rem;
+  }
+  .meta-value {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--clr-lightText);
+  }
+
+  /* ── SECTION STRUCTURE ── */
+  .cs-section {
+    margin-top: 3.5rem;
+  }
+  .cs-label {
+    font-family: monospace;
+    font-size: 1.2rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #c4a0f0;
+    margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .cs-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+    max-width: 180px;
+  }
+  .cs-h2 {
+    font-family: var(--ff-display) !important;
+    font-size: clamp(1.25rem, 3vw, 1.8rem) !important;
+    font-weight: 700 !important;
+    line-height: 1.25 !important;
+    margin-top: 0 !important;
+    margin-bottom: 1rem !important;
+    color: var(--clr-lightText) !important;
+  }
+  .cs-p {
+    font-size: 1.05rem !important;
+    color: var(--muted) !important;
+    line-height: 1.8 !important;
+    margin-bottom: 0.85rem !important;
+  }
+
+  /* ── BLOCKQUOTES ── */
+  .cs-quote {
+    border-left: 3px solid var(--clr-accent);
+    margin: 1.75rem 0;
+    padding: 1rem 1.5rem;
+    background: var(--accent-tint);
+    border-radius: 0 4px 4px 0;
+  }
+  .cs-quote p {
+    font-style: italic;
+    font-size: 1rem !important;
+    color: var(--clr-lightText) !important;
+    margin-bottom: 0.4rem !important;
+    line-height: 1.7 !important;
+  }
+  .cs-quote cite {
+    font-family: monospace;
+    font-size: 0.72rem;
+    color: var(--muted);
+    font-style: normal;
+    letter-spacing: 0.06em;
+  }
+
+  /* ── PROCESS STEPS ── */
+  .process-steps {
+    margin-top: 1.25rem;
+  }
+  .step {
+    display: grid;
+    grid-template-columns: 2.5rem 1fr;
+    gap: 1.25rem;
+    padding: 1.4rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .step:first-child { border-top: 1px solid var(--rule); }
+  .step-num {
+    font-family: monospace;
+    font-size: 1.2rem;
+    color: #c4a0f0;
+    letter-spacing: 0.06em;
+    padding-top: 0.15rem;
+  }
+  .step-content h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--clr-lightText);
+    margin-bottom: 0.3rem;
+    font-family: var(--ff-primary);
+  }
+  .step-content p {
+    font-size: 1rem;
+    color: var(--muted);
+    margin: 0;
+    line-height: 1.7;
+  }
+
+  /* ── RESULTS TABLE ── */
+  .table-wrap {
+    overflow-x: auto;
+    margin-top: 1.5rem;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+  }
+  .task-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.90rem;
+  }
+  .task-table th {
+    font-family: monospace;
+    font-size: 0.92rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: left;
+    padding: 0.75rem 1.1rem;
+    border-bottom: 1px solid var(--rule);
+    white-space: nowrap;
+    background: var(--card-bg);
+  }
+  .task-table td {
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+  .task-table tbody tr:last-child td { border-bottom: none; }
+  .task-table tbody tr:hover td { background: var(--accent-tint); }
+  .pill {
+    display: inline-block;
+    font-family: monospace;
+    font-size: 0.82rem;
+    padding: 0.2rem 0.65rem;
+    border-radius: 100px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .pill.high { background: rgba(36, 206, 133, 0.15); color: #24ce85; }
+  .pill.med  { background: rgba(247, 223, 30, 0.12);  color: #f7df1e; }
+
+  /* ── FINDINGS GRID ── */
+  .findings-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 1.5rem;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+  }
+  @media (max-width: 560px) {
+    .findings-grid { grid-template-columns: 1fr; }
+  }
+  .finding-card {
+    background: var(--card-bg);
+    padding: 1.4rem;
+  }
+  .finding-card h3 {
+    font-family: monospace !important;
+    font-size: 0.98rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #c4a0f0 !important;
+    margin-bottom: 0.5rem;
+  }
+  .finding-card p {
+    font-size: 1rem !important;
+    color: var(--muted) !important;
+    margin: 0 !important;
+    line-height: 1.65 !important;
+  }
+
+  /* ── REFLECTION BOX ── */
+  .reflection-box {
+    background: var(--card-bg);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--clr-accent);
+    padding: 2.25rem;
+    border-radius: 4px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+  }
+  .learn-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+  .learn-list li {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    font-size: 1.2rem;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+  .learn-list li::before {
+    content: '→';
+    color: var(--clr-accent);
+    flex-shrink: 0;
+    margin-top: 0.05rem;
+  }
+</style>
