@@ -13,8 +13,248 @@ import mysiteFix from "../../assets/mysiteFix.png";
     { label: "Figma", colorClass: "figmaColor" },
     { label: "Astro", colorClass: "astroColor" },
   ]}
-  githubUrl="https://github.com/zah8756"
+  githubUrl="https://github.com/zah8756/zach-portfolio-V2"
 >
-  <p>A personal portfolio site built from scratch in Astro.</p>
-  <p>Designed with a component-driven architecture — each section is a self-contained Astro component with locally scoped CSS.</p>
+  <div class="cs">
+
+    <!-- META ROW -->
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Role</div>
+        <div class="meta-value">Designer + Developer</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Timeline</div>
+        <div class="meta-value">2024 – Present</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Stack</div>
+        <div class="meta-value">Astro, TypeScript, Figma</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Context</div>
+        <div class="meta-value">Personal Project</div>
+      </div>
+    </div>
+
+    <!-- 01 OVERVIEW -->
+    <section class="cs-section">
+      <div class="cs-label">01 — Overview</div>
+      <h2 class="cs-h2">The site you're looking at right now</h2>
+      <p class="cs-p">This portfolio is a living project — it's where I practice what I preach about accessible, well-structured frontend work. The current version is the second major iteration, rebuilt from scratch in Astro after the original pure HTML/CSS version hit a wall in maintainability and scalability.</p>
+      <p class="cs-p">It started in Figma: wireframes, color system, component sketches. Then it shipped — and it keeps evolving. The ASCII particle animation hidden behind the name on the homepage wasn't in the original mockup. That's the nature of a site that's never really "done."</p>
+    </section>
+
+    <!-- 02 FROM HTML TO ASTRO -->
+    <section class="cs-section">
+      <div class="cs-label">02 — From HTML to Astro</div>
+      <h2 class="cs-h2">Why the original version couldn't scale</h2>
+      <p class="cs-p">Version one was a single-page site written in vanilla HTML and CSS. It worked — but maintaining it became painful fast. Every navigation change meant editing the same markup in multiple files. Global styles bled into each other. Adding new project pages meant duplicating boilerplate by hand. It was the kind of codebase that gets harder to work in the more you add to it.</p>
+      <p class="cs-p">The rewrite wasn't about chasing a new framework — it was a deliberate response to real friction. Astro solved the specific problems the original had without introducing unnecessary complexity.</p>
+      <div class="process-steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-content">
+            <h3>Component Architecture</h3>
+            <p>Each section (Nav, Hero, Skills, History, Projects) is now a self-contained <code>.astro</code> component. Changing the nav once updates it everywhere. No more copy-paste maintenance.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-content">
+            <h3>Scoped CSS by Default</h3>
+            <p>Astro scopes component styles automatically. Styles written inside a component only apply to that component — no naming conventions required, no accidental overrides, no specificity wars.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-content">
+            <h3>Zero JS by Default</h3>
+            <p>Astro ships no JavaScript unless you explicitly opt into it. For a portfolio that's mostly static content, this means near-instant load times and a smaller footprint — without sacrificing the interactive pieces that do need JS, like the ASCII canvas animation.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <div class="step-content">
+            <h3>File-Based Routing</h3>
+            <p>Each project page is just a file in <code>src/pages/projects/</code>. Adding a new case study is as simple as creating a new <code>.astro</code> file — no router configuration, no manual link registration.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 TECHNICAL -->
+    <section class="cs-section">
+      <div class="cs-label">03 — Technical</div>
+      <h2 class="cs-h2">Built with Astro, TypeScript, and a shared layout system</h2>
+      <p class="cs-p">Project pages are powered by a shared <code>ProjectLayout.astro</code> component that handles the consistent header, tech stack badges, hero image, and page shell. Each project just slots in its own content — keeping things DRY while allowing each case study to have its own structure and style.</p>
+      <p class="cs-p">TypeScript is used throughout for prop validation on layouts and components, catching mismatches between expected and passed data at build time rather than at runtime in the browser. The design process lived in Figma — color tokens, component states, and responsive breakpoints were all defined there before a line of code was written.</p>
+      <p class="cs-p">The interactive ASCII particle animation on the homepage is a canvas-based effect written in TypeScript. It's intentionally hidden by default — it only fires when you click the name — so the site reads cleanly for anyone who doesn't go looking for it.</p>
+    </section>
+
+    <!-- 04 NEXT STEPS -->
+    <section class="cs-section">
+      <div class="cs-label">04 — Next Steps</div>
+      <h2 class="cs-h2">What's still evolving</h2>
+      <p class="cs-p">The site is always a work in progress. Upcoming changes include adding more detailed case studies for each project, a dedicated accessibility audit section to document WCAG compliance decisions made during development, and further performance optimizations to push Lighthouse scores as high as they can go. The portfolio practices what I preach — it should be the most accessible and performant page in the project list.</p>
+    </section>
+
+  </div>
 </ProjectLayout>
+
+<style>
+  .cs {
+    --rule: #5f615b;
+    --muted: rgba(233, 217, 255, 0.78);
+    --card-bg: #251540;
+    --accent-tint: rgba(87, 50, 128, 0.25);
+  }
+
+  .cs-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .cs-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0.55em 1.25em;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+  }
+
+  .cs-btn:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
+  }
+
+  .cs-btn--primary {
+    background: #7c3aed;
+    color: #fff;
+  }
+
+  .cs-btn--secondary {
+    background: transparent;
+    color: #c4a0f0;
+    border: 1px solid #c4a0f0;
+  }
+
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 0.5rem;
+  }
+  .meta-item {
+    flex: 1;
+    min-width: 120px;
+    padding: 1rem 0.75rem;
+    border-right: 1px solid var(--rule);
+  }
+  .meta-item:last-child { border-right: none; }
+  .meta-label {
+    font-family: monospace;
+    font-size: 0.92rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 400;
+    margin-bottom: 0.3rem;
+  }
+  .meta-value {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--clr-lightText);
+  }
+
+  .cs-section {
+    margin-top: 3.5rem;
+  }
+  .cs-label {
+    font-family: monospace;
+    font-size: 1.2rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #c4a0f0;
+    margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .cs-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+    max-width: 180px;
+  }
+  .cs-h2 {
+    font-size: clamp(1.25rem, 3vw, 1.8rem);
+    font-weight: 700;
+    line-height: 1.25;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--clr-lightText);
+  }
+  .cs-p {
+    font-size: 1.05rem;
+    color: var(--muted);
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+  .cs-p code {
+    font-family: monospace;
+    font-size: 0.95em;
+    color: #c4a0f0;
+    background: var(--accent-tint);
+    padding: 0.1em 0.4em;
+    border-radius: 3px;
+  }
+
+  .process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+  .step {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+  }
+  .step-num {
+    font-family: monospace;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #c4a0f0;
+    min-width: 2.5rem;
+    padding-top: 0.1rem;
+  }
+  .step-content h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--clr-lightText);
+    margin: 0 0 0.3rem;
+  }
+  .step-content p {
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.65;
+    margin: 0;
+  }
+  .step-content p code {
+    font-family: monospace;
+    font-size: 0.9em;
+    color: #c4a0f0;
+    background: var(--accent-tint);
+    padding: 0.1em 0.35em;
+    border-radius: 3px;
+  }
+</style>

@@ -1,6 +1,8 @@
 ---
 import ProjectLayout from "../../layouts/ProjectLayout.astro";
 import chatboard from "../../assets/Chatboard.png";
+import quanntitative from "../../assets/quantitativeData.png";
+import { Image } from "astro:assets";
 ---
 
 <ProjectLayout
@@ -13,6 +15,15 @@ import chatboard from "../../assets/Chatboard.png";
   ]}
 >
   <div class="cs">
+
+    <div class="cs-actions">
+      <a class="cs-btn cs-btn--primary" href="https://www.figma.com/design/CzHGJgvHksbLskGzcoXy6z/backchannel-project?node-id=411-2&t=pGudUEq4CiuDpBmG-1" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-figma"></i> View Prototype
+      </a>
+      <a class="cs-btn cs-btn--secondary" href="https://docs.google.com/document/d/18nmjRuFaMIR0yz6AYrZWtFaFF1sXI1YtJUVpvB4ki4A/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
+        <i class="fa-solid fa-file-lines"></i> Read Research Paper
+      </a>
+    </div>
 
     <!-- META ROW -->
     <div class="meta-row">
@@ -156,6 +167,9 @@ import chatboard from "../../assets/Chatboard.png";
           </tbody>
         </table>
       </div>
+      <Image src={quanntitative} alt="Quantitative Data" width={800} height={400} />
+      <p class="image-caption">Quantitative results from usability testing across 21 participants, measuring task completion rates, error counts, and time-on-task for each core workflow.</p>
+   
     </section>
 
     <!-- 05 FINDINGS -->
@@ -218,6 +232,42 @@ import chatboard from "../../assets/Chatboard.png";
     --accent-tint: rgba(87, 50, 128, 0.25);
   }
 
+  /* ── ACTION BUTTONS ── */
+  .cs-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .cs-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0.55em 1.25em;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+  }
+
+  .cs-btn:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
+  }
+
+  .cs-btn--primary {
+    background: #7c3aed;
+    color: #fff;
+  }
+
+  .cs-btn--secondary {
+    background: transparent;
+    color: #c4a0f0;
+    border: 1px solid #c4a0f0;
+  }
+
   /* ── META ROW ── */
   .meta-row {
     display: flex;
@@ -246,6 +296,16 @@ import chatboard from "../../assets/Chatboard.png";
     font-size: 0.85rem;
     font-weight: 600;
     color: var(--clr-lightText);
+  }
+
+  /* ── IMAGE CAPTION ── */
+  .image-caption {
+    font-size: 0.85rem;
+    color: #a0a0b0;
+    text-align: center;
+    margin-top: 0.6rem;
+    font-style: italic;
+    line-height: 1.5;
   }
 
   /* ── SECTION STRUCTURE ── */

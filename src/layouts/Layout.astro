@@ -11,9 +11,10 @@ import '../styles/global.css';
 		<title>{title}</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700;800;900&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Raleway:wght@600;700;800;900&display=swap" rel="stylesheet">
 		<script src="https://kit.fontawesome.com/66a50df515.js" crossorigin="anonymous"></script>
 		<meta name="generator" content={Astro.generator} />
+		<link rel="icon" type="image/png" href="/icon.png" />
 	</head>
 	<body>
 		<header>
@@ -44,13 +45,15 @@ import '../styles/global.css';
 				</div>
 				<ul class="socialList">
 					<li class="socialListItem"><a class="socialListLink" href="https://github.com/zah8756" aria-label="GitHub"><i class="fa-brands fa-github"></i></a></li>
-					<li class="socialListItem"><a class="socialListLink" href="mailto:320zach@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a></li>
-					<li class="socialListItem"><a class="socialListLink" href="https://www.linkedin.com/in/zachary-harwood-4a5586299/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
+					<li class="socialListItem"><button class="socialListLink copy-email" aria-label="Copy email address" data-email="320zach@gmail.com"><i class="fa-solid fa-envelope"></i></button></li>
+					<li class="socialListItem"><a class="socialListLink" href="https://www.linkedin.com/in/zach-harwood-dev/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
 				</ul>
 			</div>
 		</footer>
 	</body>
 </html>
+
+<div id="email-toast" aria-live="polite">Email copied!</div>
 
 <script>
   const navToggle = document.querySelector<HTMLInputElement>('#check');
@@ -61,6 +64,20 @@ import '../styles/global.css';
       if (navToggle) navToggle.checked = false;
     });
   });
+
+  const toast = document.getElementById('email-toast')!;
+  let toastTimer: ReturnType<typeof setTimeout>;
+
+  document.querySelectorAll<HTMLButtonElement>('.copy-email').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const email = btn.dataset.email ?? '';
+      navigator.clipboard.writeText(email).then(() => {
+        toast.classList.add('show');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => toast.classList.remove('show'), 2000);
+      });
+    });
+  });
 </script>
 
 <style is:global>
@@ -69,5 +86,37 @@ import '../styles/global.css';
 		margin: 0;
 		width: 100%;
 		min-height: 100%;
+	}
+
+	button.socialListLink {
+		background: none;
+		border: none;
+		cursor: pointer;
+		color: inherit;
+		font-size: inherit;
+		line-height: inherit;
+		display: flex;
+	}
+
+	#email-toast {
+		position: fixed;
+		bottom: 1.5rem;
+		left: 50%;
+		transform: translateX(-50%) translateY(1rem);
+		background: #2a1f3d;
+		color: #e9d9ff;
+		border: 1px solid #c4a0f0;
+		padding: 0.5em 1.2em;
+		border-radius: 6px;
+		font-size: 0.875rem;
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.2s ease, transform 0.2s ease;
+		z-index: 9999;
+	}
+
+	#email-toast.show {
+		opacity: 1;
+		transform: translateX(-50%) translateY(0);
 	}
 </style>

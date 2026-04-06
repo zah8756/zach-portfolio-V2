@@ -15,6 +15,235 @@ import mtgdle from "../../assets/mtgdle.png";
   ]}
   githubUrl="https://github.com/zah8756"
 >
-  <p>A daily card-guessing game built with React and TypeScript, inspired by Wordle.</p>
-  <p>Players guess a Magic: The Gathering card based on attribute hints — color, type, mana cost, set, and subtype — with color-coded feedback on each guess.</p>
+  <div class="cs">
+
+    <div class="cs-actions">
+      <a class="cs-btn cs-btn--primary" href="https://mt-gdle-2x26.vercel.app/" target="_blank" rel="noopener noreferrer">
+        <i class="fa-solid fa-play"></i> Play Game
+      </a>
+    </div>
+
+    <!-- META ROW -->
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Role</div>
+        <div class="meta-value">Solo Developer</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Timeline</div>
+        <div class="meta-value">2025 – 2026</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Stack</div>
+        <div class="meta-value">React, TypeScript, Tailwind</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Context</div>
+        <div class="meta-value">Personal Project</div>
+      </div>
+    </div>
+
+    <!-- 01 OVERVIEW -->
+    <section class="cs-section">
+      <div class="cs-label">01 — Overview</div>
+      <h2 class="cs-h2">Wordle meets Magic: The Gathering</h2>
+      <p class="cs-p">MTGdle is a daily card-guessing game inspired by Wordle, built for fans of Magic: The Gathering. Each day players are given a hidden card to identify, making guesses based on attribute feedback — color, type, mana cost, set, and subtype — with color-coded hints on every attempt.</p>
+      <p class="cs-p">The project started as a way to combine a hobby with hands-on practice building a full React + TypeScript application from scratch, including API integration, game state management, and a responsive UI.</p>
+    </section>
+
+    <!-- 02 HOW IT WORKS -->
+    <section class="cs-section">
+      <div class="cs-label">02 — How It Works</div>
+      <h2 class="cs-h2">Attribute-based feedback on every guess</h2>
+      <p class="cs-p">Players type a card name and receive immediate feedback across five attributes. Green means an exact match, yellow means partially correct (e.g. shared color), and red means no overlap. The game pulls live card data from a modified version of scryfall api data set that i created to limit the number of calls to the api.</p>
+      <div class="process-steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-content">
+            <h3>Card Selection</h3>
+            <p>A daily card is seeded from my modifed scryfall api data set — consistent for all players on the same day, refreshing at midnight.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-content">
+            <h3>Guess & Feedback</h3>
+            <p>Each guess reveals color-coded attribute hints across color identity, card type, mana value, set, rarity,name, and subtype.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-content">
+            <h3>Win or Retry</h3>
+            <p>Players have 20 guesses to identify the card.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 TECHNICAL -->
+    <section class="cs-section">
+      <div class="cs-label">03 — Technical</div>
+      <h2 class="cs-h2">Built with React, TypeScript & Tailwind</h2>
+      <p class="cs-p">The frontend is built entirely in React with TypeScript for type-safe game state handling. Tailwind CSS handles all styling. Card data is fetched from my modified scryfall api data set that i created to limit the number of calls to the api. The api data set is hosted on vercel and is fetched using the fetch api.</p>
+      <p class="cs-p">Game state — including the daily answer, past guesses, and win condition — is persisted in localStorage so progress is retained across page refreshes without requiring a backend or user accounts.</p>
+    </section>
+
+    <!-- 04 next steps -->
+    <section class="cs-section">
+      <div class="cs-label">04 — Next Steps</div>
+      <h2 class="cs-h2">What's next for MTGdle</h2>
+      <p class="cs-p">I plan to add a leaderboard feature so players can see how they compare to others. I also want to add a feature so players can share their results on social media. I want to add a feature so players can see the history of their guesses and see how they did over time.</p>
+    </section>
+
+  </div>
 </ProjectLayout>
+
+<style>
+  .cs {
+    --rule: #5f615b;
+    --muted: rgba(233, 217, 255, 0.78);
+    --card-bg: #251540;
+    --accent-tint: rgba(87, 50, 128, 0.25);
+  }
+
+  /* ── ACTION BUTTONS ── */
+  .cs-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .cs-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0.55em 1.25em;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+  }
+
+  .cs-btn:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
+  }
+
+  .cs-btn--primary {
+    background: #7c3aed;
+    color: #fff;
+  }
+
+  .cs-btn--secondary {
+    background: transparent;
+    color: #c4a0f0;
+    border: 1px solid #c4a0f0;
+  }
+
+  /* ── META ROW ── */
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 0.5rem;
+  }
+  .meta-item {
+    flex: 1;
+    min-width: 120px;
+    padding: 1rem 0.75rem;
+    border-right: 1px solid var(--rule);
+  }
+  .meta-item:last-child { border-right: none; }
+  .meta-label {
+    font-family: monospace;
+    font-size: 0.92rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 400;
+    margin-bottom: 0.3rem;
+  }
+  .meta-value {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--clr-lightText);
+  }
+
+  /* ── SECTION STRUCTURE ── */
+  .cs-section {
+    margin-top: 3.5rem;
+  }
+  .cs-label {
+    font-family: monospace;
+    font-size: 1.2rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #c4a0f0;
+    margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .cs-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+    max-width: 180px;
+  }
+  .cs-h2 {
+    font-size: clamp(1.25rem, 3vw, 1.8rem);
+    font-weight: 700;
+    line-height: 1.25;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--clr-lightText);
+  }
+  .cs-p {
+    font-size: 1.05rem;
+    color: var(--muted);
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+  .cs-link {
+    color: #c4a0f0;
+    text-underline-offset: 3px;
+  }
+
+  /* ── PROCESS STEPS ── */
+  .process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+  .step {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+  }
+  .step-num {
+    font-family: monospace;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #c4a0f0;
+    min-width: 2.5rem;
+    padding-top: 0.1rem;
+  }
+  .step-content h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--clr-lightText);
+    margin: 0 0 0.3rem;
+  }
+  .step-content p {
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.65;
+    margin: 0;
+  }
+</style>

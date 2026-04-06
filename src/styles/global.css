@@ -34,7 +34,6 @@
 	--clr-typescript: #3178c6;
 	--clr-astro: #ff5d08;
 
-
 	--fw-reg: 300;
 	--fw-bold: 900;
 
@@ -64,8 +63,16 @@ html {
 	scroll-behavior: smooth;
 	background-color: var(--clr-background);
 	background-image:
-		radial-gradient(ellipse at 15% 25%, rgba(87, 50, 128, 0.38) 0%, transparent 50%),
-		radial-gradient(ellipse at 85% 75%, rgba(87, 50, 128, 0.18) 0%, transparent 45%);
+		radial-gradient(
+			ellipse at 15% 25%,
+			rgba(87, 50, 128, 0.38) 0%,
+			transparent 50%
+		),
+		radial-gradient(
+			ellipse at 85% 75%,
+			rgba(87, 50, 128, 0.18) 0%,
+			transparent 45%
+		);
 	background-attachment: fixed;
 }
 
@@ -152,6 +159,16 @@ h3 {
 	font-weight: var(--fw-reg);
 }
 
+.intro-leadin {
+	display: inline-block;
+	background: linear-gradient(135deg, #e9d9ff 10%, var(--clr-accent) 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	margin-bottom: 0.1em;
+	font-size: var(--fs-h3);
+}
+
 #sectionIntro strong {
 	background: linear-gradient(135deg, #e9d9ff 10%, var(--clr-accent) 100%);
 	-webkit-background-clip: text;
@@ -228,7 +245,7 @@ header {
 }
 
 .navLink::after {
-	content: '';
+	content: "";
 	position: absolute;
 	bottom: 0;
 	left: 0.5rem;
@@ -330,7 +347,7 @@ header {
 #introImage {
 	box-shadow: var(--bs);
 	margin-bottom: 2em;
-    height: auto;
+	height: auto;
 }
 
 #introSubtitle {
@@ -363,6 +380,10 @@ header {
 		z-index: 2;
 	}
 
+	#introHero {
+		align-self: end;
+	}
+
 	#introSubtitle {
 		align-self: start;
 		grid-row: 2;
@@ -383,7 +404,7 @@ header {
 
 @media (max-width: 800px) {
 	#introSubtitle {
-		left: -8.5em;
+		left: -2.5em;
 	}
 }
 
@@ -391,9 +412,10 @@ header {
 	grid-area: about;
 	max-width: 800px;
 	padding-bottom: 2em;
-	font-size: 1.1em;
-	font-weight: 500;
+	font-size: 1.2em;
+	font-weight: 700;
 	margin: 0;
+	
 }
 
 #introLinks {
@@ -438,8 +460,6 @@ header {
 	color: var(--clr-lightText);
 	border-color: var(--clr-accent);
 }
-
-
 
 /* footer section */
 
@@ -515,4 +535,3 @@ header {
 		gap: 1em;
 	}
 }
-

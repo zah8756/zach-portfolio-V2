@@ -1,24 +1,40 @@
 ---
 import { Image } from 'astro:assets';
-import headshot from '../assets/myHead.jpg';
+import headshot from '../assets/myFace.png';
+import AsciiHero from './asciiHero.astro';
 ---
 
 <section class="intro" id="home">
-    <h1 class="sectionTitle" id="sectionIntro">
-      Hi, I am <strong>Zach Harwood</strong>
-    </h1>
-    <p class="sectionSubtitle" id="introSubtitle">Front-End Developer</p>
+    <div id="introHero">
+      <strong class="intro-leadin">Hi, I'm</strong>
+      <AsciiHero/>
+      <h1 class="intro-heading" style="cursor:pointer" title="click for a suprise">Zach Harwood</h1>
+    </div>
+    <p class="sectionSubtitle" id="introSubtitle">User Experience Developer &amp; Researcher</p>
     <Image src={headshot} alt="Zach Harwood smiling" id="introImage" loading="eager"/>
-    <p id="about">Web Developer with Usability focus specializing in building accessible technology and high-functionality web applications.</p>
-    <section id="introLinks">
-      <button id="resumeButton" onclick="location.href='/cResume.pdf'">
+      <p id="about">"I make things that work well, feel right, and pass WCAG. Two out of three isn't good enough."</p>
+      <section id="introLinks">
+      <button id="resumeButton" onclick="location.href='/resume.pdf'">
         <span>Resume</span>
         <i class="fa-solid fa-file-arrow-down"></i>
       </button>
       <ul class="socialList" id="topLinks">
         <li class="socialListItem"><a class="socialListLink" href="https://github.com/zah8756" aria-label="GitHub"><i class="fa-brands fa-github"></i></a></li>
-        <li class="socialListItem"><a class="socialListLink" href="mailto:320zach@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a></li>
+        <li class="socialListItem"><button class="socialListLink copy-email" aria-label="Copy email address" data-email="320zach@gmail.com"><i class="fa-solid fa-envelope"></i></button></li>
         <li class="socialListItem"><a class="socialListLink" href="https://www.linkedin.com/in/zachary-harwood-4a5586299/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
       </ul>
     </section>
   </section>
+
+  <style>
+    .intro-heading:hover {
+      cursor: pointer;
+    }
+    .intro-heading{
+      background: linear-gradient(135deg, #e9d9ff 10%, var(--clr-accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.2em;
+    }
+  </style>
