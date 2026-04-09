@@ -27,8 +27,8 @@ const { href, imgSrc, imgAlt, startDate, endDate, place, role, bulletPoints } = 
     </div>
     <h3>{place}</h3>
     <p class="eduTitle">{role}</p>
-    <ul>
-      {bulletPoints.map((point) => <li>{point}</li>)}
+    <ul class="bulletList">
+      {bulletPoints.map((point) => <li class="bulletItem">{point}</li>)}
     </ul>
   </div>
 </li>
@@ -74,7 +74,12 @@ const { href, imgSrc, imgAlt, startDate, endDate, place, role, bulletPoints } = 
     padding-right: 1.5rem;
   }
 
-  .eduInfo li {
+  .bulletList {
+    padding-left: 1.25rem;
+    margin: 0;
+  }
+
+  .bulletItem {
     padding-right: 2.5rem;
     line-height: 1.75rem;
     margin: 10px 0;
@@ -92,5 +97,70 @@ const { href, imgSrc, imgAlt, startDate, endDate, place, role, bulletPoints } = 
     font-family: var(--ff-secondary);
     display: flex;
     gap: 0.25rem;
+    flex-wrap: wrap;
+  }
+
+  @media screen and (max-width: 600px) {
+    .eduObject {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-left: 0;
+      padding: 1rem;
+      gap: 0.6rem;
+    }
+
+    .eduTarget {
+      position: static;
+      width: 2.5rem;
+      height: 2.5rem;
+      flex-shrink: 0;
+    }
+
+    .eduInfo {
+      width: 100%;
+      align-items: center;
+      text-align: center;
+    }
+
+    .eduInfo h3 {
+      padding-right: 0;
+      font-size: 1rem;
+    }
+
+    .eduDate {
+      justify-content: center;
+    }
+
+    .bulletList {
+      
+      padding-left: 1rem;
+      margin-top: 0.5rem;
+      text-align: left;
+      width: 100%;
+    }
+
+    .bulletItem {
+      padding-right: 0;
+      line-height: 1.6rem;
+      margin: 0;
+      font-size: 0.9rem;
+      padding-top: 0.6rem;
+      padding-bottom: 0.6rem;
+      border-top: 1px solid #3d3f3a55;
+    }
+
+    .bulletItem:first-child {
+      border-top: none;
+      padding-top: 0.25rem;
+    }
+
+    .eduDate {
+      font-size: 0.8rem;
+    }
+
+    .eduTitle {
+      font-size: 0.85rem;
+    }
   }
 </style>
