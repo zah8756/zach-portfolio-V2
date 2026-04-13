@@ -1,7 +1,10 @@
 ---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
 interface Props {
   href: string;
-  imgSrc: string;
+  imgSrc: ImageMetadata;
   imgAlt: string;
   startDate: string;
   endDate: string;
@@ -16,7 +19,7 @@ const { href, imgSrc, imgAlt, startDate, endDate, place, role, bulletPoints } = 
 <li class="eduObject">
   <a class="eduTarget" href={href}>
     <span class="eduImgWraper">
-      <img class="eduImg" src={imgSrc} alt={imgAlt} />
+      <Image class="eduImg" src={imgSrc} alt={imgAlt} />
     </span>
   </a>
   <div class="eduInfo">
